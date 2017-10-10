@@ -54,7 +54,7 @@
                             
                             <div class="col-2">
                             	<button id="btnConsultar"
-									class="btn btn-primary">Consultar Produto</button>
+									class="btn btn-principal">Consultar Produto</button>
                          	</div>
                          </div>
                          
@@ -73,7 +73,7 @@
 										</button>
 										<button type="button" id="btnDtInicial"
 											onclick="mostrarDatePicker('inpDataInicial')"
-											class="btn btn-primary">
+											class="btn btn-secundario">
 											<i class="fa fa-calendar" aria-hidden="true"></i>
 										</button>
 									</div>
@@ -92,7 +92,7 @@
 										</button>
 										<button type="button" id="btnDtInicial"
 											onclick="mostrarDatePicker('inpDataFinal')"
-											class="btn btn-primary">
+											class="btn btn-secundario">
 											<i class="fa fa-calendar" aria-hidden="true"></i>
 										</button>
 									</div>
@@ -107,7 +107,7 @@
                        		<div class="col-1">
                        			<button type="button"
 								onclick="mostrarModal('modalAdd')"
-								class="btn btn-success btn-block">
+								class="btn btn-secundario btn-block">
 								<i class="fa fa-plus" aria-hidden="true"></i>
 							</button>
                        		</div>
@@ -125,21 +125,24 @@
                                        </div>
                                        
                                        <div class="modal-body">
-                                       	   <div class="row">
-                                               <div class="col-md-12">
-													<div class="form-horizontal">
-														<label for="inpCodigoProd" class="control-label col-md-2">Cód. Produto:</label>
-													    <div class="col-md-7" id="test">															    												    	
+                                       	   <div class="form-group row">
+                                               <div class="col-12">
+													<div class="form-group row">
+														<label for="inpCodigoProd" class="control-label col-2">Cód. Produto:</label>
+													    <div class="col-12" id="test">															    												    	
 													    	<input class="form-control" name="codProd"
 															id="inpCodigoProd" type="text"
 															placeholder="Use o botão para recuperar o código do produto">
 														</div>
-														<div class="col-md-3">
-														    <button type="button"
-															class="btn btn-primary btn-block">Recuperar Cód. </button>
 														</div>
-												   	</div>
-                                               </div>
+													<div class="form-group row justify-content-center">
+														<div class="col-4">
+														    <button type="button"
+															class="btn btn-secundario btn-block">Recuperar Cód. </button>
+														</div>
+													</div>
+											   	</div>
+                                           </div>
 
                                            </div>
 
@@ -290,7 +293,7 @@
                                                 <td class='light-primary-color'>&nbsp;</td>
                                                 <td class="light-primary-color text-center">
                                                     <div class="btn-group" role="group" aria-label="...">
-                                                        <button type="button" class="btn btn-primary" id="alterar">
+                                                        <button type="button" class="btn btn-secundario" id="alterar">
                                                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                                         </button>
                                                         <button type="button" class="btn btn-danger" onclick="removerLinha(this)" id="excluir">
@@ -310,7 +313,6 @@
                 </div>
 				<!-- ********** FIM DO BODY DO TAB CONTENT (CONTAINER DAS ABAS) ********** -->
 			</div>				
-		</div>
 		<!-- ********** FIM DA LINHA DO CONTAINER ********** -->
 	</jsp:body>
 

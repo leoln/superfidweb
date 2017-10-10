@@ -1,11 +1,186 @@
-body {
-    padding-top: 70px;
-}
-
-.tab-content {
-	padding-top: 45px;
-}
 
 .clsDatePicker {
 	z-index: 99999 !important;
+}
+
+.btn-principal {
+
+  color: #ffffff;
+
+  background-color: #611BBD;
+
+  border-color: #130269;
+
+}
+
+ 
+
+.btn-principal:hover,
+
+.btn-principal:focus,
+
+.btn-principal:active,
+
+.btn-principal.active,
+
+.open .dropdown-toggle.btn-principal {
+
+  color: #ffffff;
+
+  background-color: #49247A;
+
+  border-color: #130269;
+
+}
+
+ 
+
+.btn-principal:active,
+
+.btn-principal.active,
+
+.open .dropdown-toggle.btn-principal {
+
+  background-image: none;
+
+}
+
+ 
+
+.btn-principal.disabled,
+
+.btn-principal[disabled],
+
+fieldset[disabled] .btn-principal,
+
+.btn-principal.disabled:hover,
+
+.btn-principal[disabled]:hover,
+
+fieldset[disabled] .btn-principal:hover,
+
+.btn-principal.disabled:focus,
+
+.btn-principal[disabled]:focus,
+
+fieldset[disabled] .btn-principal:focus,
+
+.btn-principal.disabled:active,
+
+.btn-principal[disabled]:active,
+
+fieldset[disabled] .btn-principal:active,
+
+.btn-principal.disabled.active,
+
+.btn-principal[disabled].active,
+
+fieldset[disabled] .btn-principal.active {
+
+  background-color: #611BBD;
+
+  border-color: #130269;
+
+}
+
+ 
+
+.btn-principal .badge {
+
+  color: #611BBD;
+
+  background-color: #ffffff;
+
+}
+
+ 
+
+.btn-secundario {
+
+  color: #ffffff;
+
+  background-color: #4D78E3;
+
+  border-color: #6969DB;
+
+}
+
+ 
+
+.btn-secundario:hover,
+
+.btn-secundario:focus,
+
+.btn-secundario:active,
+
+.btn-secundario.active,
+
+.open .dropdown-toggle.btn-secundario {
+
+  color: #ffffff;
+
+  background-color: #2A54FA;
+
+  border-color: #6969DB;
+
+}
+
+ 
+
+.btn-secundario:active,
+
+.btn-secundario.active,
+
+.open .dropdown-toggle.btn-secundario {
+
+  background-image: none;
+
+}
+
+ 
+
+.btn-secundario.disabled,
+
+.btn-secundario[disabled],
+
+fieldset[disabled] .btn-secundario,
+
+.btn-secundario.disabled:hover,
+
+.btn-secundario[disabled]:hover,
+
+fieldset[disabled] .btn-secundario:hover,
+
+.btn-secundario.disabled:focus,
+
+.btn-secundario[disabled]:focus,
+
+fieldset[disabled] .btn-secundario:focus,
+
+.btn-secundario.disabled:active,
+
+.btn-secundario[disabled]:active,
+
+fieldset[disabled] .btn-secundario:active,
+
+.btn-secundario.disabled.active,
+
+.btn-secundario[disabled].active,
+
+fieldset[disabled] .btn-secundario.active {
+
+  background-color: #4D78E3;
+
+  border-color: #6969DB;
+
+}
+
+ 
+
+.btn-secundario .badge {
+
+  color: #4D78E3;
+
+  background-color: #ffffff;
+
 }

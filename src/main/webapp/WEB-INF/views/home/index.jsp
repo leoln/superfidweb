@@ -60,7 +60,7 @@
 						</div>
 	
 						<br />
-						<button name="btnLogin" id="btnLogin" class="btn btn-lg btn-success btn-block">
+						<button name="btnLogin" id="btnLogin" class="btn btn-lg btn-principal btn-block">
 							<i class="fa fa-sign-in" aria-hidden="true"></i>
 							Entrar
 						</button>

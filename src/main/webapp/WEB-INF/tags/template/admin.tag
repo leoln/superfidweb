@@ -24,6 +24,7 @@
 		<link rel="stylesheet" href="<c:url value='/assets/css/jquery-ui.structure.min.css'/>" media="screen" >
         <link rel="stylesheet" href="<c:url value='/assets/css/jquery-ui.theme.min.css'/>" media="screen" >
 		
+		<link rel="stylesheet" href="<c:url value='/assets/css/adm-principal.css'/>" media="screen" >
 		<link rel="stylesheet" href="<c:url value='/assets/css/palette.css'/>" media="screen" >
 		
 		<jsp:invoke fragment="extraStyles" />
