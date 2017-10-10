@@ -1,0 +1,11 @@
+body {
+    padding-top: 70px;
+}
+
+.tab-content {
+	padding-top: 45px;
+}
+
+.clsDatePicker {
+	z-index: 99999 !important;
+}
