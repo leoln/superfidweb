@@ -35,7 +35,7 @@ public class ProdutoService implements IProdutoService {
 	}
 
 	@Override
-	public List<Produto> listPersons() {
+	public List<Produto> listProduto() {
 		// TODO Auto-generated method stub
 		List<Produto> listProdutos = produtoRepository.findAll();
 		
@@ -47,6 +47,15 @@ public class ProdutoService implements IProdutoService {
 	public Produto getProdutoById(long id) {
 		// TODO Auto-generated method stub
 		Produto produto = produtoRepository.findOne(id);
+		
+		logService.info("Produto resgatado! Produto em detalhe: " + produto);
+		return produto;
+	}
+	
+	@Override
+	public Produto getProdutoByRfid(String rfid) {
+		// TODO Auto-generated method stub
+		Produto produto = produtoRepository.findByCodigoRfid(rfid);
 		
 		logService.info("Produto resgatado! Produto em detalhe: " + produto);
 		return produto;

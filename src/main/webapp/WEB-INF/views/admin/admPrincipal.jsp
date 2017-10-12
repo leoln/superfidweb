@@ -95,7 +95,7 @@
 						
 							<div class="modal fade" id="modalAdd" tabindex="-1" role="dialog">
 								<div class="modal-dialog modal-lg" role="document">
-									<div class="modal-content">--
+									<div class="modal-content">
 										<div class="modal-header text-center">
 											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 												<span aria-hidden="true">&times;</span>
@@ -126,22 +126,20 @@
 										<br />
 										
 										<div class="form-group row">
-											<div class="col-12">
-												<div class="col-6">
-													<div class="form-group">
-														<label for="nomeProd" class="control-label col-md-4">Nome Produto:</label>
-														<div class="col-md-8">
-															<input class="form-control input-block-level" size="8" type="text" id="nomeProd" disabled>
-														</div>
+											<div class="col-6">
+												<div class="form-group">
+													<label for="nomeProd" class="control-label col-md-4">Nome Produto:</label>
+													<div class="col-md-8">
+														<input class="form-control input-block-level" size="8" type="text" id="nomeProd" disabled>
 													</div>
 												</div>
-												
-												<div class="col-6">
-													<div class="form-group">                  
-														<label for="precoProd" class="control-label col-md-4">Preço Unitário:</label>
-														<div class="col-md-8">
-															<input class="form-control" size="8" type="text" id="precoProd" disabled>
-														</div>
+											</div>
+											
+											<div class="col-6">
+												<div class="form-group">                  
+													<label for="precoProd" class="control-label col-md-4">Preço Unitário:</label>
+													<div class="col-md-8">
+														<input class="form-control" size="8" type="text" id="precoProd" disabled>
 													</div>
 												</div>
 											</div>

@@ -17,6 +17,9 @@ public class Produto {
 	@Column(name="codigo")
 	private long codigo;
     
+	@Column(name="codigoRfid")
+	private String codigoRfid;
+	
 	@Column(name="descricao")
 	private String descricao;
     
@@ -39,84 +42,71 @@ public class Produto {
 	private String urlImagem;
     
     public Produto() { }
-    
-    public Produto(long codProduto, String descricao, String marca, double precoUnitario, String validade, String codigoLote, String unidades, String urlImagem) {
-        this.codigo = codProduto;
-    	this.descricao = descricao;
-        this.precoUnitario = precoUnitario;
-        this.marca = marca;
-        this.dataValidade = validade;
-        this.codigoLote = codigoLote;
-        this.unidade = unidades;
-        this.urlImagem= urlImagem;
-    }
 
-    public Produto(String descricao, String marca, double precoUnitario, String dataValidade, String codigoLote, String unidades, String urlImagem) {
-        this.descricao = descricao;
-        this.precoUnitario = precoUnitario;
-        this.marca = marca;
-        this.dataValidade = dataValidade;
-        this.codigoLote = codigoLote;
-        this.unidade = unidades;
-        this.urlImagem= urlImagem;
-    }
-
-    public long getCodProduto() {
+    public long getCodigo() {
 		return codigo;
 	}
+    
+	public void setCodigo(long codigo) {
+		this.codigo = codigo;
+	}
 
-	public void setCodProduto(long codProduto) {
-		this.codigo = codProduto;
+	public String getCodigoRfid() {
+		return codigoRfid;
+	}
+
+	public void setCodigoRfid(String codigoRfid) {
+		this.codigoRfid = codigoRfid;
 	}
 
 	public String getDescricao() {
-        return descricao;
-    }
+		return descricao;
+	}
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
 
-    public double getPrecoUnitario() {
-        return precoUnitario;
-    }
+	public String getMarca() {
+		return marca;
+	}
 
-    public void setPrecoUnitario(double precoUnitario) {
-        this.precoUnitario = precoUnitario;
-    }
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
 
-    public String getMarca() {
-        return marca;
-    }
+	public double getPrecoUnitario() {
+		return precoUnitario;
+	}
 
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
+	public void setPrecoUnitario(double precoUnitario) {
+		this.precoUnitario = precoUnitario;
+	}
 
-    public String getDataValidade() {
-        return dataValidade;
-    }
+	public String getDataValidade() {
+		return dataValidade;
+	}
 
-    public void setDataValidade(Date dataValidade) {
-    	DateFormat dataFormatada = new SimpleDateFormat("dd/MM/yyyy");
-    	this.dataValidade = dataFormatada.format(dataValidade);
-    }
+	public void setDataValidade(Date dataValidade) {
+		DateFormat dataFormatada = new SimpleDateFormat("dd/MM/yyyy");
+		this.dataValidade = dataFormatada.format(dataValidade);
+	}
 
-    public String getLote() {
-        return codigoLote;
-    }
+	public String getCodigoLote() {
+		return codigoLote;
+	}
 
-    public void setLote(String codigoLote) {
-    	this.codigoLote = codigoLote;
-    }
+	public void setCodigoLote(String codigoLote) {
+		this.codigoLote = codigoLote;
+	}
 
-    public String getUnidades() {
-        return unidade;
-    }
+	public String getUnidade() {
+		return unidade;
+	}
 
-    public void setUnidades(String unidades) {
-        this.unidade = unidades;
-    }
+	public void setUnidade(String unidade) {
+		this.unidade = unidade;
+	}
 
 	public String getUrlImagem() {
 		return urlImagem;
@@ -128,9 +118,9 @@ public class Produto {
 
 	@Override
 	public String toString() {
-		return "Produto [codProduto=" + codigo + ", descricao=" + descricao + ", precoUnitario=" + precoUnitario
-				+ ", marca=" + marca + ", validade=" + dataValidade + ", codigoLote=" + codigoLote + ", unidade=" + unidade
-				+ ", urlImagem=" + urlImagem + "]";
+		return "Produto [codigo=" + codigo + ", codigoRfid=" + codigoRfid + ", descricao=" + descricao + ", marca="
+				+ marca + ", precoUnitario=" + precoUnitario + ", dataValidade=" + dataValidade + ", codigoLote="
+				+ codigoLote + ", unidade=" + unidade + ", urlImagem=" + urlImagem + "]";
 	}
 
 	@Override
@@ -138,15 +128,16 @@ public class Produto {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + (int) (codigo ^ (codigo >>> 32));
-		result = prime * result + ((descricao == null) ? 0 : descricao.hashCode());
 		result = prime * result + ((codigoLote == null) ? 0 : codigoLote.hashCode());
+		result = prime * result + ((codigoRfid == null) ? 0 : codigoRfid.hashCode());
+		result = prime * result + ((dataValidade == null) ? 0 : dataValidade.hashCode());
+		result = prime * result + ((descricao == null) ? 0 : descricao.hashCode());
 		result = prime * result + ((marca == null) ? 0 : marca.hashCode());
 		long temp;
 		temp = Double.doubleToLongBits(precoUnitario);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + ((unidade == null) ? 0 : unidade.hashCode());
 		result = prime * result + ((urlImagem == null) ? 0 : urlImagem.hashCode());
-		result = prime * result + ((dataValidade == null) ? 0 : dataValidade.hashCode());
 		return result;
 	}
 
@@ -161,15 +152,25 @@ public class Produto {
 		Produto other = (Produto) obj;
 		if (codigo != other.codigo)
 			return false;
-		if (descricao == null) {
-			if (other.descricao != null)
-				return false;
-		} else if (!descricao.equals(other.descricao))
-			return false;
 		if (codigoLote == null) {
 			if (other.codigoLote != null)
 				return false;
 		} else if (!codigoLote.equals(other.codigoLote))
+			return false;
+		if (codigoRfid == null) {
+			if (other.codigoRfid != null)
+				return false;
+		} else if (!codigoRfid.equals(other.codigoRfid))
+			return false;
+		if (dataValidade == null) {
+			if (other.dataValidade != null)
+				return false;
+		} else if (!dataValidade.equals(other.dataValidade))
+			return false;
+		if (descricao == null) {
+			if (other.descricao != null)
+				return false;
+		} else if (!descricao.equals(other.descricao))
 			return false;
 		if (marca == null) {
 			if (other.marca != null)
@@ -188,12 +189,9 @@ public class Produto {
 				return false;
 		} else if (!urlImagem.equals(other.urlImagem))
 			return false;
-		if (dataValidade == null) {
-			if (other.dataValidade != null)
-				return false;
-		} else if (!dataValidade.equals(other.dataValidade))
-			return false;
 		return true;
 	}
+
+	
 
 }

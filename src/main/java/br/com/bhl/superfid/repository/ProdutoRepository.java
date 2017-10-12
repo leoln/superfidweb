@@ -9,5 +9,6 @@ import br.com.bhl.superfid.model.Produto;
 public interface ProdutoRepository extends JpaRepository<Produto, Long>{
 	
 	public Produto findByDescricao(String descricao);
+	public Produto findByCodigoRfid(String codigoRfid);
 	
 }
