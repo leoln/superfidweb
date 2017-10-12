@@ -24,9 +24,9 @@ public class ProdutoJsonController {
 	
 	@RequestMapping(value = "/parseJson", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	public String produtoParseJson(long id) {
+	public String produtoParseJson(long codigo) {
 		String produtoJson = "";
-		produtoJson = gson.toJson( produtoService.getProdutoById(id) );
+		produtoJson = gson.toJson( produtoService.getProdutoById(codigo) );
 		return produtoJson;
 	}
 	

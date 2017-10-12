@@ -9,64 +9,64 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity(name="Produtos")
-@Table(name="PRODUTOS")
+@Entity(name="Tb_Produto")
+@Table(name="tb_produto")
 public class Produto {
 	
 	@Id
-	@Column(name="ID_PRODUTO")
-	private long codProduto;
+	@Column(name="codigo")
+	private long codigo;
     
-	@Column(name="DES_PRODUTO")
+	@Column(name="descricao")
 	private String descricao;
     
-	@Column(name="PRECO_UNIT")
+	@Column(name="marca")
+	private String marca;
+
+	@Column(name="precoUnitario")
 	private double precoUnitario;
     
-	@Column(name="DES_MARCA")
-	private String marca;
+	@Column(name="dataValidade")
+	private String dataValidade;
     
-	@Column(name="DAT_VALIDADE")
-	private String validade;
+	@Column(name="codigoLote")
+	private String codigoLote;
     
-	@Column(name="NUM_LOTE")
-	private String lote;
+	@Column(name="unidade")
+	private String unidade;
     
-	@Column(name="DES_UNIDADE")
-	private String unidades;
-    
-	@Column(name="IMG_URL")
+	@Column(name="urlImagem")
 	private String urlImagem;
     
     public Produto() { }
     
-    public Produto(long codProduto, String descricao, String marca, double precoUnitario, String validade, String lote, String unidades, String urlImagem) {
-        this.codProduto = codProduto;
+    public Produto(long codProduto, String descricao, String marca, double precoUnitario, String validade, String codigoLote, String unidades, String urlImagem) {
+        this.codigo = codProduto;
     	this.descricao = descricao;
         this.precoUnitario = precoUnitario;
         this.marca = marca;
-        this.validade = validade;
-        this.lote = lote;
-        this.unidades = unidades;
+        this.dataValidade = validade;
+        this.codigoLote = codigoLote;
+        this.unidade = unidades;
         this.urlImagem= urlImagem;
     }
 
-    public Produto(String descricao, String marca, double precoUnitario, String validade, String lote, String unidades, String urlImagem) {
+    public Produto(String descricao, String marca, double precoUnitario, String dataValidade, String codigoLote, String unidades, String urlImagem) {
         this.descricao = descricao;
         this.precoUnitario = precoUnitario;
         this.marca = marca;
-        this.validade = validade;
-        this.lote = lote;
-        this.unidades = unidades;
+        this.dataValidade = dataValidade;
+        this.codigoLote = codigoLote;
+        this.unidade = unidades;
         this.urlImagem= urlImagem;
     }
 
     public long getCodProduto() {
-		return codProduto;
+		return codigo;
 	}
 
 	public void setCodProduto(long codProduto) {
-		this.codProduto = codProduto;
+		this.codigo = codProduto;
 	}
 
 	public String getDescricao() {
@@ -93,31 +93,29 @@ public class Produto {
         this.marca = marca;
     }
 
-    public String getValidade() {
-        return validade;
+    public String getDataValidade() {
+        return dataValidade;
     }
 
-    public void setValidade(Date validade) {
+    public void setDataValidade(Date dataValidade) {
     	DateFormat dataFormatada = new SimpleDateFormat("dd/MM/yyyy");
-        String dataValidade = dataFormatada.format(validade);
-    	this.validade = dataValidade;
+    	this.dataValidade = dataFormatada.format(dataValidade);
     }
 
     public String getLote() {
-        return lote;
+        return codigoLote;
     }
 
-    public void setLote(long lote) {
-        String numLote = "" + lote;
-    	this.lote = numLote;
+    public void setLote(String codigoLote) {
+    	this.codigoLote = codigoLote;
     }
 
     public String getUnidades() {
-        return unidades;
+        return unidade;
     }
 
     public void setUnidades(String unidades) {
-        this.unidades = unidades;
+        this.unidade = unidades;
     }
 
 	public String getUrlImagem() {
@@ -130,8 +128,8 @@ public class Produto {
 
 	@Override
 	public String toString() {
-		return "Produto [codProduto=" + codProduto + ", descricao=" + descricao + ", precoUnitario=" + precoUnitario
-				+ ", marca=" + marca + ", validade=" + validade + ", lote=" + lote + ", unidades=" + unidades
+		return "Produto [codProduto=" + codigo + ", descricao=" + descricao + ", precoUnitario=" + precoUnitario
+				+ ", marca=" + marca + ", validade=" + dataValidade + ", codigoLote=" + codigoLote + ", unidade=" + unidade
 				+ ", urlImagem=" + urlImagem + "]";
 	}
 
@@ -139,16 +137,16 @@ public class Produto {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + (int) (codProduto ^ (codProduto >>> 32));
+		result = prime * result + (int) (codigo ^ (codigo >>> 32));
 		result = prime * result + ((descricao == null) ? 0 : descricao.hashCode());
-		result = prime * result + ((lote == null) ? 0 : lote.hashCode());
+		result = prime * result + ((codigoLote == null) ? 0 : codigoLote.hashCode());
 		result = prime * result + ((marca == null) ? 0 : marca.hashCode());
 		long temp;
 		temp = Double.doubleToLongBits(precoUnitario);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		result = prime * result + ((unidades == null) ? 0 : unidades.hashCode());
+		result = prime * result + ((unidade == null) ? 0 : unidade.hashCode());
 		result = prime * result + ((urlImagem == null) ? 0 : urlImagem.hashCode());
-		result = prime * result + ((validade == null) ? 0 : validade.hashCode());
+		result = prime * result + ((dataValidade == null) ? 0 : dataValidade.hashCode());
 		return result;
 	}
 
@@ -161,17 +159,17 @@ public class Produto {
 		if (getClass() != obj.getClass())
 			return false;
 		Produto other = (Produto) obj;
-		if (codProduto != other.codProduto)
+		if (codigo != other.codigo)
 			return false;
 		if (descricao == null) {
 			if (other.descricao != null)
 				return false;
 		} else if (!descricao.equals(other.descricao))
 			return false;
-		if (lote == null) {
-			if (other.lote != null)
+		if (codigoLote == null) {
+			if (other.codigoLote != null)
 				return false;
-		} else if (!lote.equals(other.lote))
+		} else if (!codigoLote.equals(other.codigoLote))
 			return false;
 		if (marca == null) {
 			if (other.marca != null)
@@ -180,20 +178,20 @@ public class Produto {
 			return false;
 		if (Double.doubleToLongBits(precoUnitario) != Double.doubleToLongBits(other.precoUnitario))
 			return false;
-		if (unidades == null) {
-			if (other.unidades != null)
+		if (unidade == null) {
+			if (other.unidade != null)
 				return false;
-		} else if (!unidades.equals(other.unidades))
+		} else if (!unidade.equals(other.unidade))
 			return false;
 		if (urlImagem == null) {
 			if (other.urlImagem != null)
 				return false;
 		} else if (!urlImagem.equals(other.urlImagem))
 			return false;
-		if (validade == null) {
-			if (other.validade != null)
+		if (dataValidade == null) {
+			if (other.dataValidade != null)
 				return false;
-		} else if (!validade.equals(other.validade))
+		} else if (!dataValidade.equals(other.dataValidade))
 			return false;
 		return true;
 	}
