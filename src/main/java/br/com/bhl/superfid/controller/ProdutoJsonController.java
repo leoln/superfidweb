@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 
-import br.com.bhl.superfid.model.Produto;
 import br.com.bhl.superfid.service.IProdutoService;
 
 @Controller
@@ -30,11 +29,11 @@ public class ProdutoJsonController {
 		return produtoJson;
 	}
 	
-	@RequestMapping(value = "/parseObject", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	/*@RequestMapping(value = "/parseObject", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public Produto produtoParseObject(String json) {
 		Produto produto;
 		produto = gson.fromJson(json, Produto.class);
 		return produto;
-	}	
+	}*/
 }
