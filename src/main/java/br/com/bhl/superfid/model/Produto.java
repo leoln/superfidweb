@@ -36,7 +36,7 @@ public class Produto {
 	private String codigoLote;
     
 	@Column(name="unidade")
-	private String unidade;
+	private double unidade;
     
 	@Column(name="urlImagem")
 	private String urlImagem;
@@ -100,11 +100,11 @@ public class Produto {
 		this.codigoLote = codigoLote;
 	}
 
-	public String getUnidade() {
+	public double getUnidade() {
 		return unidade;
 	}
 
-	public void setUnidade(String unidade) {
+	public void setUnidade(double unidade) {
 		this.unidade = unidade;
 	}
 
@@ -136,7 +136,8 @@ public class Produto {
 		long temp;
 		temp = Double.doubleToLongBits(precoUnitario);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		result = prime * result + ((unidade == null) ? 0 : unidade.hashCode());
+		temp = Double.doubleToLongBits(unidade);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + ((urlImagem == null) ? 0 : urlImagem.hashCode());
 		return result;
 	}
@@ -179,10 +180,7 @@ public class Produto {
 			return false;
 		if (Double.doubleToLongBits(precoUnitario) != Double.doubleToLongBits(other.precoUnitario))
 			return false;
-		if (unidade == null) {
-			if (other.unidade != null)
-				return false;
-		} else if (!unidade.equals(other.unidade))
+		if (Double.doubleToLongBits(unidade) != Double.doubleToLongBits(other.unidade))
 			return false;
 		if (urlImagem == null) {
 			if (other.urlImagem != null)
@@ -190,8 +188,6 @@ public class Produto {
 		} else if (!urlImagem.equals(other.urlImagem))
 			return false;
 		return true;
-	}
-
-	
+	}	
 
 }
