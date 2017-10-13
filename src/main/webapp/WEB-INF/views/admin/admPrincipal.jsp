@@ -103,16 +103,14 @@
 										</div>
 										                            
 										<div class="modal-body">
-											<div class="form-group row">
-												<div class="col-12">
-													<div class="form-group row">
-														<label for="inpCodigoProd" class="control-label col-2">Cód. Produto:</label>
-														<div class="col-12">
-															<input class="form-control" name="codProd" id="inpCodigoProd" type="text" placeholder="Use o botão para recuperar o código do produto">
-														</div>
-													</div>
-												</div>
-											</div>
+											<div class="form-group row justify-content-center">
+                                                <div class="col align-self-center col-2">
+                                                    <label class="control-label">Cód. Produto:</label>
+                                                </div>
+                                                <div class="col-9">
+                                                    <input class="form-control" name="codProd" id="inpCodigoProd" type="text" placeholder="Use o botão para recuperar o código do produto">
+								                </div>
+                                            </div>
 											<div class="form-group row">
 												<div class="col-12">
 													<div class="form-group row justify-content-center">
@@ -160,10 +158,10 @@
                                                         <div class="input-group">
                                                             <input class="form-control clsDatePicker" size="8" type="text" id="inpValidadeProd" data-date-container="#modalAdd" data-provide="datepicker" disabled>
                                                             <div class="input-group-btn">
-                                                                <button type="button" onclick="limpar('inpValidadeProd')" class="btn btn-default" disabled>
+                                                                <button type="button" onclick="limpar('inpValidadeProd')" class="btn btn-danger" disabled>
                                                                     <i class="fa fa-times-circle" aria-hidden="true"></i>
                                                                 </button>
-                                                                <button onclick="mostrarDatePicker('inpValidadeProd')" type="button" class="btn btn-default" disabled>
+                                                                <button onclick="mostrarDatePicker('inpValidadeProd')" type="button" class="btn btn-secundario" disabled>
                                                                     <i class="fa fa-calendar" aria-hidden="true"></i>
                                                                 </button>
                                                             </div>
