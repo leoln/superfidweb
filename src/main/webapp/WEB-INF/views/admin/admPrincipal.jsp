@@ -100,18 +100,22 @@
 											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 												<span aria-hidden="true">&times;</span>
 											</button>
-											<h2 class="modal-title" align="center">Adicionar Produto</h2>
+											<h2 class="modal-title">Adicionar Produto</h2>
 										</div>
 										                            
 										<div class="modal-body">
 											<div class="form-group row">
 												<div class="col-12">
 													<div class="form-group row">
-														<label for="inpCodigoProd" class="control-label col-2">Cód. Produto:</label>
-														<div class="col-12">															    												    	
+														<label for="inpCodigoProd" class="control-label">Cód. Produto:</label>
+														<div class="col-12">
 															<input class="form-control" name="codProd" id="inpCodigoProd" type="text" placeholder="Use o botão para recuperar o código do produto">
 														</div>
 													</div>
+												</div>
+											</div>
+											<div class="form-group row">
+												<div class="col-12">
 													<div class="form-group row justify-content-center">
 														<div class="col-4">
 															<button type="button" class="btn btn-secundario btn-block">Recuperar Cód. </button>
@@ -119,7 +123,6 @@
 													</div>
 												</div>
 											</div>
-										
 										</div>
 										
 										<br />
@@ -128,8 +131,8 @@
 										<div class="form-group row">
 											<div class="col-6">
 												<div class="form-group">
-													<label for="nomeProd" class="control-label col-md-4">Nome Produto:</label>
-													<div class="col-md-8">
+													<label for="nomeProd" class="control-label col-4">Nome Produto:</label>
+													<div class="col-8">
 														<input class="form-control input-block-level" size="8" type="text" id="nomeProd" disabled>
 													</div>
 												</div>
@@ -137,8 +140,8 @@
 											
 											<div class="col-6">
 												<div class="form-group">                  
-													<label for="precoProd" class="control-label col-md-4">Preço Unitário:</label>
-													<div class="col-md-8">
+													<label for="precoProd" class="control-label col-4">Preço Unitário:</label>
+													<div class="col-8">
 														<input class="form-control" size="8" type="text" id="precoProd" disabled>
 													</div>
 												</div>
