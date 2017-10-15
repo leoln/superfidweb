@@ -1,7 +1,5 @@
 package br.com.bhl.superfid.model;
 
-import java.util.Calendar;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -25,7 +23,7 @@ public class Usuario {
     private String sobrenome;
 	
 	@Column(name="dataNascimento")
-    private Calendar dataNascimento;
+    private String dataNascimento;
 	
 	@Column(name="emailAutenticacao")
     private String emailAutenticacao;
@@ -33,11 +31,11 @@ public class Usuario {
 	@Column(name="numeroCPF")
     private long numeroCPF;
 	
-	@Column(name="ddd")
-    private int ddd;
+	@Column(name="numeroDDD")
+    private int numeroDDD;
 	
-	@Column(name="telefone")
-    private long telefone;
+	@Column(name="numeroTelefone")
+    private long numeroTelefone;
 
     public Usuario() { }
 
@@ -81,27 +79,27 @@ public class Usuario {
         this.numeroCPF = numeroCPF;
     }
 
-    public int getDdd() {
-        return ddd;
+    public int getNumeroDDD() {
+        return numeroDDD;
     }
 
-    public void setDdd(int ddd) {
-        this.ddd = ddd;
+    public void setNumeroDDD(int ddd) {
+        this.numeroDDD = ddd;
     }
 
-    public long getTelefone() {
-        return telefone;
+    public long getNumeroTelefone() {
+        return numeroTelefone;
     }
 
-    public void setTelefone(long telefone) {
-        this.telefone = telefone;
+    public void setNumeroTelefone(long telefone) {
+        this.numeroTelefone = telefone;
     }
 
-    public Calendar getDataNascimento() {
+    public String getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Calendar dataNascimento) {
+    public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
@@ -117,7 +115,7 @@ public class Usuario {
 	public String toString() {
 		return "Usuario [codigoSistema=" + codigoSistema + ", codigoAutenticacao=" + codigoAutenticacao + ", nome="
 				+ nome + ", sobrenome=" + sobrenome + ", dataNascimento=" + dataNascimento + ", emailAutenticacao="
-				+ emailAutenticacao + ", numeroCPF=" + numeroCPF + ", ddd=" + ddd + ", telefone=" + telefone + "]";
+				+ emailAutenticacao + ", numeroCPF=" + numeroCPF + ", ddd=" + numeroDDD + ", telefone=" + numeroTelefone + "]";
 	}
 
 	@Override
@@ -129,8 +127,8 @@ public class Usuario {
 
         if (getCodigoSistema() != usuario.getCodigoSistema()) return false;
         if (getNumeroCPF() != usuario.getNumeroCPF()) return false;
-        if (getDdd() != usuario.getDdd()) return false;
-        if (getTelefone() != usuario.getTelefone()) return false;
+        if (getNumeroDDD() != usuario.getNumeroDDD()) return false;
+        if (getNumeroTelefone() != usuario.getNumeroTelefone()) return false;
         if (getCodigoAutenticacao() != null ? !getCodigoAutenticacao().equals(usuario.getCodigoAutenticacao()) : usuario.getCodigoAutenticacao() != null)
             return false;
         if (getNome() != null ? !getNome().equals(usuario.getNome()) : usuario.getNome() != null)
@@ -152,8 +150,8 @@ public class Usuario {
         result = 31 * result + (getDataNascimento() != null ? getDataNascimento().hashCode() : 0);
         result = 31 * result + (getEmailAutenticacao() != null ? getEmailAutenticacao().hashCode() : 0);
         result = 31 * result + (int) (getNumeroCPF() ^ (getNumeroCPF() >>> 32));
-        result = 31 * result + getDdd();
-        result = 31 * result + (int) (getTelefone() ^ (getTelefone() >>> 32));
+        result = 31 * result + getNumeroDDD();
+        result = 31 * result + (int) (getNumeroTelefone() ^ (getNumeroTelefone() >>> 32));
         return result;
     }
 
