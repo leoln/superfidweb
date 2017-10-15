@@ -30,7 +30,7 @@ public class ProdutoJsonController {
 		return produtoJson;
 	}
 	
-	@RequestMapping(value = "/parseObject", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/parseObject", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public Produto produtoParseObject(String json) {
 		Produto produto;
