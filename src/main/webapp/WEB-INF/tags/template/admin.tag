@@ -37,22 +37,16 @@
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSuperfid" aria-controls="navbarSuperfid" aria-expanded="false" aria-label="Toggle navigation">
   				<i class="fa fa-bars fa-lg text-white" aria-hidden="true"></i>
 			</button>
-
-			<div class="collapse navbar-collapse justify-content-md-center" id="navbarSuperfid">
-				<ul class="navbar-nav">
-				    <li class="nav-item">
-				      	<a class="nav-link text-white" href="#"><i class="fa fa-home text-white" aria-hidden="true"></i> Home </a>
-				    </li>
-					<li class="nav-item dropdown">
-					    <a class="nav-link text-white" href="#" id="dropdownSuperfid" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					    	<i class="fa fa-chevron-circle-down text-white" aria-hidden="true"></i> Curiosidades
-					    </a>
-					    <div class="dropdown-menu" aria-labelledby="dropdownSuperfid">
-						    <label class="dropdown-header">Infos Especiais</label>
-						    <a class="dropdown-item" href="#">Quem somos</a>
-						    <a class="dropdown-item" href="#">Sair</a>
-					    </div>
-					</li>
+			<div class="collapse navbar-collapse" id="navbarSuperfid">
+                
+                <img class="navbar-brand" src="<c:url value='/assets/img/logo_nav.png'/>" alt="logo">
+                
+				<ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-link text-white">
+                            <i class="fa fa-fw fa-sign-out"></i>Sair
+                        </button>
+                    </li>
 				</ul>
 			</div>
 		</nav>

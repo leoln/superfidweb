@@ -12,9 +12,9 @@ import br.com.bhl.superfid.repository.ProdutoRepository;
 
 @Service("produtoService")
 public class ProdutoService implements IProdutoService {
-	
+
 	Logger logService = LoggerFactory.getLogger(ProdutoService.class);
-	
+
 	@Autowired
 	ProdutoRepository produtoRepository;
 
@@ -22,7 +22,7 @@ public class ProdutoService implements IProdutoService {
 	public void addProduto(Produto produto) {
 		// TODO Auto-generated method stub
 		produtoRepository.save(produto);
-		
+
 		logService.info("Produto criado com sucesso! Produto em detalhe: " + produto);
 	}
 
@@ -30,7 +30,7 @@ public class ProdutoService implements IProdutoService {
 	public void updateProduto(Produto produto) {
 		// TODO Auto-generated method stub
 		produtoRepository.save(produto);
-		
+
 		logService.info("Produto atualizado com sucesso! Produto em detalhe: " + produto);
 	}
 
@@ -38,7 +38,7 @@ public class ProdutoService implements IProdutoService {
 	public List<Produto> listProduto() {
 		// TODO Auto-generated method stub
 		List<Produto> listProdutos = produtoRepository.findAll();
-		
+
 		logService.info("Lista de produtos retornada.");
 		return listProdutos;
 	}
@@ -47,16 +47,16 @@ public class ProdutoService implements IProdutoService {
 	public Produto getProdutoById(long id) {
 		// TODO Auto-generated method stub
 		Produto produto = produtoRepository.findOne(id);
-		
+
 		logService.info("Produto resgatado! Produto em detalhe: " + produto);
 		return produto;
 	}
-	
+
 	@Override
 	public Produto getProdutoByRfid(String rfid) {
 		// TODO Auto-generated method stub
 		Produto produto = produtoRepository.findByCodigoRfid(rfid);
-		
+
 		logService.info("Produto resgatado! Produto em detalhe: " + produto);
 		return produto;
 	}
