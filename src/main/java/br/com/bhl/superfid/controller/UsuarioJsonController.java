@@ -30,7 +30,7 @@ public class UsuarioJsonController {
 		return usuarioJson;
 	}
 	
-	@RequestMapping(value = "/cadastrar", method = RequestMethod.POST)
+	@RequestMapping(value = "/cadastrar", method = RequestMethod.GET)
 	public void usuarioCadastro(String json) {
 		Usuario usuario = gson.fromJson(json, Usuario.class);
 		usuarioService.addUsuario(usuario);
