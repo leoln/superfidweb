@@ -18,23 +18,23 @@ public class ProdutoJsonController {
 
 	@Autowired
 	IProdutoService produtoService;
-	
+
 	@Autowired
 	Gson gson;
-	
+
 	@RequestMapping(value = "/parseJson", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public String produtoParseJson(String rfid) {
 		String produtoJson = "";
-		produtoJson = gson.toJson( produtoService.getProdutoByRfid( rfid ) );
+		produtoJson = gson.toJson(produtoService.getProdutoByRfid(rfid));
 		return produtoJson;
 	}
-	
+
 	@RequestMapping(value = "/parseObject", method = RequestMethod.POST)
 	public Produto produtoParseObject(String json) {
 		Produto produto;
 		produto = gson.fromJson(json, Produto.class);
 		return produto;
-} 
-	
+	}
+
 }

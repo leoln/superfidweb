@@ -5,10 +5,12 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import br.com.bhl.superfid.model.Usuario;
 import br.com.bhl.superfid.repository.UsuarioRepository;
 
+@Service("usuarioService")
 public class UsuarioService implements IUsuarioService {
 
 	Logger logService = LoggerFactory.getLogger(UsuarioService.class);

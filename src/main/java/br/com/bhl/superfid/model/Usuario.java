@@ -157,6 +157,4 @@ public class Usuario {
         return result;
     }
 
-
-
 }//fim da classe
