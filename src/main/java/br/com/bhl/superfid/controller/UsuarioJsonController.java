@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 
+import br.com.bhl.superfid.model.Usuario;
 import br.com.bhl.superfid.service.IUsuarioService;
 
 @Controller
@@ -27,6 +28,13 @@ public class UsuarioJsonController {
 		String usuarioJson = "";
 		usuarioJson = gson.toJson( usuarioService.getUsuarioByCodigoAtenticacao( codigoAutenticacao ) );
 		return usuarioJson;
+	}
+	
+	@RequestMapping(value = "/cadastrar", method = RequestMethod.POST)
+	@ResponseBody
+	public void usuarioCadastro(String json) {
+		Usuario usuario = gson.fromJson(json, Usuario.class);
+		usuarioService.addUsuario(usuario);
 	}
 	
 }
