@@ -14,7 +14,7 @@ public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="codigoSistema")
-    private long codigoSistema;
+    private Long codigoSistema;
 	
 	@Column(name="codigoAutenticacao")
     private String codigoAutenticacao;
@@ -42,11 +42,11 @@ public class Usuario {
 
     public Usuario() { }
 
-    public long getCodigoSistema() {
+    public Long getCodigoSistema() {
         return codigoSistema;
     }
 
-    public void setCodigoSistema(long codigoSistema) {
+    public void setCodigoSistema(Long codigoSistema) {
         this.codigoSistema = codigoSistema;
     }
 
