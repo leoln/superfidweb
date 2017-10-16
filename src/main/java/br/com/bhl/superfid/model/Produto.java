@@ -1,8 +1,6 @@
 package br.com.bhl.superfid.model;
 
-import java.sql.Date;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,11 +9,13 @@ import javax.persistence.Table;
 
 @Entity(name="Tb_Produto")
 @Table(name="tb_produto")
-public class Produto {
+public class Produto implements Serializable{
 	
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@Column(name="codigo")
-	private long codigo;
+	private Long codigo;
     
 	@Column(name="codigoRfid")
 	private String codigoRfid;
@@ -27,7 +27,7 @@ public class Produto {
 	private String marca;
 
 	@Column(name="precoUnitario")
-	private double precoUnitario;
+	private Double precoUnitario;
     
 	@Column(name="dataValidade")
 	private String dataValidade;
@@ -36,18 +36,18 @@ public class Produto {
 	private String codigoLote;
     
 	@Column(name="unidade")
-	private double unidade;
+	private Double unidade;
     
 	@Column(name="urlImagem")
 	private String urlImagem;
     
     public Produto() { }
 
-    public long getCodigo() {
+    public Long getCodigo() {
 		return codigo;
 	}
     
-	public void setCodigo(long codigo) {
+	public void setCodigo(Long codigo) {
 		this.codigo = codigo;
 	}
 
@@ -75,11 +75,11 @@ public class Produto {
 		this.marca = marca;
 	}
 
-	public double getPrecoUnitario() {
+	public Double getPrecoUnitario() {
 		return precoUnitario;
 	}
 
-	public void setPrecoUnitario(double precoUnitario) {
+	public void setPrecoUnitario(Double precoUnitario) {
 		this.precoUnitario = precoUnitario;
 	}
 
@@ -87,9 +87,8 @@ public class Produto {
 		return dataValidade;
 	}
 
-	public void setDataValidade(Date dataValidade) {
-		DateFormat dataFormatada = new SimpleDateFormat("dd/MM/yyyy");
-		this.dataValidade = dataFormatada.format(dataValidade);
+	public void setDataValidade(String dataValidade) {
+		this.dataValidade = dataValidade;
 	}
 
 	public String getCodigoLote() {
@@ -100,11 +99,11 @@ public class Produto {
 		this.codigoLote = codigoLote;
 	}
 
-	public double getUnidade() {
+	public Double getUnidade() {
 		return unidade;
 	}
 
-	public void setUnidade(double unidade) {
+	public void setUnidade(Double unidade) {
 		this.unidade = unidade;
 	}
 
@@ -127,17 +126,14 @@ public class Produto {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + (int) (codigo ^ (codigo >>> 32));
+		result = prime * result + ((codigo == null) ? 0 : codigo.hashCode());
 		result = prime * result + ((codigoLote == null) ? 0 : codigoLote.hashCode());
 		result = prime * result + ((codigoRfid == null) ? 0 : codigoRfid.hashCode());
 		result = prime * result + ((dataValidade == null) ? 0 : dataValidade.hashCode());
 		result = prime * result + ((descricao == null) ? 0 : descricao.hashCode());
 		result = prime * result + ((marca == null) ? 0 : marca.hashCode());
-		long temp;
-		temp = Double.doubleToLongBits(precoUnitario);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(unidade);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((precoUnitario == null) ? 0 : precoUnitario.hashCode());
+		result = prime * result + ((unidade == null) ? 0 : unidade.hashCode());
 		result = prime * result + ((urlImagem == null) ? 0 : urlImagem.hashCode());
 		return result;
 	}
@@ -151,7 +147,10 @@ public class Produto {
 		if (getClass() != obj.getClass())
 			return false;
 		Produto other = (Produto) obj;
-		if (codigo != other.codigo)
+		if (codigo == null) {
+			if (other.codigo != null)
+				return false;
+		} else if (!codigo.equals(other.codigo))
 			return false;
 		if (codigoLote == null) {
 			if (other.codigoLote != null)
@@ -178,9 +177,15 @@ public class Produto {
 				return false;
 		} else if (!marca.equals(other.marca))
 			return false;
-		if (Double.doubleToLongBits(precoUnitario) != Double.doubleToLongBits(other.precoUnitario))
+		if (precoUnitario == null) {
+			if (other.precoUnitario != null)
+				return false;
+		} else if (!precoUnitario.equals(other.precoUnitario))
 			return false;
-		if (Double.doubleToLongBits(unidade) != Double.doubleToLongBits(other.unidade))
+		if (unidade == null) {
+			if (other.unidade != null)
+				return false;
+		} else if (!unidade.equals(other.unidade))
 			return false;
 		if (urlImagem == null) {
 			if (other.urlImagem != null)
@@ -188,6 +193,6 @@ public class Produto {
 		} else if (!urlImagem.equals(other.urlImagem))
 			return false;
 		return true;
-	}	
+	}
 
 }
