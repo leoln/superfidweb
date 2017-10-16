@@ -27,6 +27,7 @@ public class ItemCarrinho implements Serializable{
 	private Carrinho carrinho;
 	
 	@OneToOne
+	@JoinColumn(name = "codigoProduto", referencedColumnName = "codigo")
     private Produto produto;
 	
 	@Column(name = "quantidade")
