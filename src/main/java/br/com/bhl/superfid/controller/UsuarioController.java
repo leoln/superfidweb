@@ -34,7 +34,6 @@ public class UsuarioController {
 	@RequestMapping(value = "/cadastrar", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)	
 	public void usuarioCadastro( @RequestBody String json) {
 		Usuario usuario = gson.fromJson(json, Usuario.class);
-		System.out.println(usuario);
 		usuarioService.addUsuario(usuario);
 	}
 	

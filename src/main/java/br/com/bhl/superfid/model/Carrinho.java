@@ -21,6 +21,9 @@ public class Carrinho implements Serializable	{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
+	
+	@Column(name = "dataCriacao")
+	private String dataCriacao;
 
 	@OneToMany(mappedBy = "carrinho", fetch = FetchType.LAZY, targetEntity = ItemCarrinho.class)
 	private List<ItemCarrinho> listaCarrinho;
@@ -36,6 +39,14 @@ public class Carrinho implements Serializable	{
 
 	public void setCodigo(Long codigo) {
 		this.codigo = codigo;
+	}
+
+	public String getDataCriacao() {
+		return dataCriacao;
+	}
+
+	public void setDataCriacao(String dataCriacao) {
+		this.dataCriacao = dataCriacao;
 	}
 
 	public List<ItemCarrinho> getListaCarrinho() {
