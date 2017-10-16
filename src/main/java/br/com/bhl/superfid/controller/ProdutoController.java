@@ -13,7 +13,7 @@ import br.com.bhl.superfid.service.IProdutoService;
 
 @Controller
 @RequestMapping("/produto")
-public class ProdutoJsonController {
+public class ProdutoController {
 
 	@Autowired
 	IProdutoService produtoService;

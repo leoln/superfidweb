@@ -15,7 +15,7 @@ import br.com.bhl.superfid.service.IUsuarioService;
 
 @Controller
 @RequestMapping("/usuario")
-public class UsuarioJsonController {
+public class UsuarioController {
 
 	@Autowired
 	IUsuarioService usuarioService;
@@ -36,7 +36,6 @@ public class UsuarioJsonController {
 		Usuario usuario = gson.fromJson(json, Usuario.class);
 		System.out.println(usuario);
 		usuarioService.addUsuario(usuario);
-		
 	}
 	
 }
