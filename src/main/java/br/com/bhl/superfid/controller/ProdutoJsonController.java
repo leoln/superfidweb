@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 
-import br.com.bhl.superfid.model.Produto;
 import br.com.bhl.superfid.service.IProdutoService;
 
 @Controller
@@ -28,13 +27,6 @@ public class ProdutoJsonController {
 		String produtoJson = "";
 		produtoJson = gson.toJson(produtoService.getProdutoByRfid(rfid));
 		return produtoJson;
-	}
-
-	@RequestMapping(value = "/parseObject", method = RequestMethod.POST)
-	public Produto produtoParseObject(String json) {
-		Produto produto;
-		produto = gson.fromJson(json, Produto.class);
-		return produto;
 	}
 
 }
