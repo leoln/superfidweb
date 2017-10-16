@@ -72,14 +72,14 @@ public class Carrinho implements Serializable	{
 	}
 
 	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
+	public boolean equals(Object objeto) {
+		if (this == objeto)
 			return true;
-		if (obj == null)
+		if (objeto == null)
 			return false;
-		if (getClass() != obj.getClass())
+		if (getClass() != objeto.getClass())
 			return false;
-		Carrinho other = (Carrinho) obj;
+		Carrinho other = (Carrinho) objeto;
 		if (codigo == null) {
 			if (other.codigo != null)
 				return false;
