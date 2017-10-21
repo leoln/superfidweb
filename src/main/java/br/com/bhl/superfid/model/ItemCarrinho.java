@@ -20,12 +20,15 @@ public class ItemCarrinho implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "codigoItem")
 	private Long codigoItem;
 
 	@ManyToOne
+	@Column(name="codigoCarrinho")
 	private Carrinho carrinho;
 	
 	@OneToOne(cascade = CascadeType.ALL)
+	@Column(name = "codigoProduto")
     private Produto produto;
 	
 	@Column(name = "quantidade")
