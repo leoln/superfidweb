@@ -5,7 +5,6 @@ import java.io.Serializable;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,11 +25,11 @@ public class ItemCarrinho implements Serializable{
 	private Long codigoItem;
 
 	@ManyToOne
-	@JoinColumn(name="codigoCarrinho", referencedColumnName = "codigoCarrinho")
+	@JoinColumn(name="codigo", referencedColumnName = "codigoCarrinho")
 	private Carrinho carrinho;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "codigoProduto", referencedColumnName = "codigoProduto" )
+	@JoinColumn(name = "codigo", referencedColumnName = "codigoProduto" )
     private Produto produto;
 	
 	@Column(name = "quantidade")
