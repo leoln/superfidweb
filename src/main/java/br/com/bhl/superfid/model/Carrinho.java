@@ -26,7 +26,7 @@ public class Carrinho implements Serializable	{
 	@Column(name = "dataCriacao")
 	private String dataCriacao;
 
-	@OneToMany(mappedBy = "codigoCarrinho", fetch = FetchType.LAZY, targetEntity = ItemCarrinho.class)
+	@OneToMany(mappedBy = "carrinho", fetch = FetchType.LAZY, targetEntity = ItemCarrinho.class)
 	private List<ItemCarrinho> listaCarrinho;
 	
 	@Column(name = "subtotal")
