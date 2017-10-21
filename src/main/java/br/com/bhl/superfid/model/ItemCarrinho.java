@@ -29,7 +29,7 @@ public class ItemCarrinho implements Serializable{
 	private Carrinho carrinho;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	@Column(name = "codigoProduto")
+	@JoinColumn(name = "codigoProduto")
     private Produto produto;
 	
 	@Column(name = "quantidade")
