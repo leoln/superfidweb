@@ -2,12 +2,12 @@ package br.com.bhl.superfid.model;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -23,11 +23,9 @@ public class ItemCarrinho implements Serializable{
 	private Long codigoItem;
 
 	@ManyToOne
-	@JoinColumn(name = "codigoCarrinho", referencedColumnName = "codigo")
 	private Carrinho carrinho;
 	
-	@OneToOne
-	@JoinColumn(name = "codigoProduto", referencedColumnName = "codigo")
+	@OneToOne(cascade = CascadeType.ALL)
     private Produto produto;
 	
 	@Column(name = "quantidade")
