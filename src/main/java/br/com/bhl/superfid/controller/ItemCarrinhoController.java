@@ -25,7 +25,7 @@ public class ItemCarrinhoController {
 	@RequestMapping(value = "/cadastrar", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)	
 	public void itemCarrinhoCadastro( @RequestBody String json) {
 		ItemCarrinho itemCarrinho = gson.fromJson(json, ItemCarrinho.class);
-		itemCarrinhoService.addItemCarrinho(itemCarrinho);
+		itemCarrinhoService.updateItemCarrinho(itemCarrinho);
 	}
 	
 }
