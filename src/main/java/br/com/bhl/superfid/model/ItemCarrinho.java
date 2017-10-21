@@ -25,7 +25,7 @@ public class ItemCarrinho implements Serializable{
 	private Long codigoItem;
 
 	@ManyToOne
-	@JoinColumn(referencedColumnName = "codigo")
+	@JoinColumn(name="codigoCarrinho", referencedColumnName = "codigo")
 	private Carrinho carrinho;
 	
 	@OneToOne(cascade = CascadeType.ALL)
