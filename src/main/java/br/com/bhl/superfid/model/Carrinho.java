@@ -1,15 +1,10 @@
 package br.com.bhl.superfid.model;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity(name = "Tb_Carrinho")
@@ -19,18 +14,14 @@ public class Carrinho implements Serializable	{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "codigo")
 	private Long codigo;
 	
 	@Column(name = "dataCriacao")
 	private String dataCriacao;
-
-	@OneToMany(mappedBy = "carrinho", fetch = FetchType.LAZY, targetEntity = ItemCarrinho.class)
-	private List<ItemCarrinho> listaCarrinho;
 	
 	@Column(name = "subtotal")
-    private double subtotal;
+    private Double subtotal;
 
     public Carrinho() { }
 
@@ -50,25 +41,12 @@ public class Carrinho implements Serializable	{
 		this.dataCriacao = dataCriacao;
 	}
 
-	public List<ItemCarrinho> getListaCarrinho() {
-		return listaCarrinho;
-	}
-
-	public void setListaCarrinho(List<ItemCarrinho> listaCarrinho) {
-		this.listaCarrinho = listaCarrinho;
-	}
-
-	public double getSubtotal() {
+	public Double getSubtotal() {
 		return subtotal;
 	}
 
-	public void setSubtotal(double subtotal) {
+	public void setSubtotal(Double subtotal) {
 		this.subtotal = subtotal;
-	}
-
-	@Override
-	public String toString() {
-		return "Carrinho [codigo=" + codigo + ", listaCarrinho=" + listaCarrinho + ", subtotal=" + subtotal + "]";
 	}
 
 	@Override
@@ -76,35 +54,41 @@ public class Carrinho implements Serializable	{
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((codigo == null) ? 0 : codigo.hashCode());
-		result = prime * result + ((listaCarrinho == null) ? 0 : listaCarrinho.hashCode());
-		long temp;
-		temp = Double.doubleToLongBits(subtotal);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((dataCriacao == null) ? 0 : dataCriacao.hashCode());
+		result = prime * result + ((subtotal == null) ? 0 : subtotal.hashCode());
 		return result;
 	}
 
 	@Override
-	public boolean equals(Object objeto) {
-		if (this == objeto)
+	public boolean equals(Object obj) {
+		if (this == obj)
 			return true;
-		if (objeto == null)
+		if (obj == null)
 			return false;
-		if (getClass() != objeto.getClass())
+		if (getClass() != obj.getClass())
 			return false;
-		Carrinho other = (Carrinho) objeto;
+		Carrinho other = (Carrinho) obj;
 		if (codigo == null) {
 			if (other.codigo != null)
 				return false;
 		} else if (!codigo.equals(other.codigo))
 			return false;
-		if (listaCarrinho == null) {
-			if (other.listaCarrinho != null)
+		if (dataCriacao == null) {
+			if (other.dataCriacao != null)
 				return false;
-		} else if (!listaCarrinho.equals(other.listaCarrinho))
+		} else if (!dataCriacao.equals(other.dataCriacao))
 			return false;
-		if (Double.doubleToLongBits(subtotal) != Double.doubleToLongBits(other.subtotal))
+		if (subtotal == null) {
+			if (other.subtotal != null)
+				return false;
+		} else if (!subtotal.equals(other.subtotal))
 			return false;
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Carrinho [codigo=" + codigo + ", dataCriacao=" + dataCriacao + ", subtotal=" + subtotal + "]";
 	}
 	
 }

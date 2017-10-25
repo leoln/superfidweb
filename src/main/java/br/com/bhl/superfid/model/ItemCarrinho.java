@@ -2,15 +2,9 @@ package br.com.bhl.superfid.model;
 
 import java.io.Serializable;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity(name = "Tb_Item_Carrinho")
@@ -20,20 +14,17 @@ public class ItemCarrinho implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "codigoItem")
 	private Long codigoItem;
 
-	@ManyToOne
-	@JoinColumn(name="codigoCarrinho", referencedColumnName = "codigo")
-	private Carrinho carrinho;
+	@Column(name="codigoCarrinho")
+	private Long codigoCarrinho;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(referencedColumnName = "codigo" )
-    private Produto produto;
+	@Column(name = "codigoProduto")
+	private Long codigoProduto;
 	
 	@Column(name = "quantidade")
-    private double quantidade;
+    private Double quantidade;
 
     public ItemCarrinho() { }
 
@@ -45,46 +36,38 @@ public class ItemCarrinho implements Serializable{
 		this.codigoItem = codigoItem;
 	}
 
-	public Carrinho getCarrinho() {
-		return carrinho;
+	public Long getCodigoCarrinho() {
+		return codigoCarrinho;
 	}
 
-	public void setCarrinho(Carrinho carrinho) {
-		this.carrinho = carrinho;
+	public void setCodigoCarrinho(Long codigoCarrinho) {
+		this.codigoCarrinho = codigoCarrinho;
 	}
 
-	public Produto getProduto() {
-		return produto;
+	public Long getCodigoProduto() {
+		return codigoProduto;
 	}
 
-	public void setProduto(Produto produto) {
-		this.produto = produto;
+	public void setCodigoProduto(Long codigoProduto) {
+		this.codigoProduto = codigoProduto;
 	}
 
-	public double getQuantidade() {
+	public Double getQuantidade() {
 		return quantidade;
 	}
 
-	public void setQuantidade(double quantidade) {
+	public void setQuantidade(Double quantidade) {
 		this.quantidade = quantidade;
-	}
-
-	@Override
-	public String toString() {
-		return "ItemCarrinho [codigoItem=" + codigoItem + ", carrinho=" + carrinho + ", produto=" + produto
-				+ ", quantidade=" + quantidade + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((carrinho == null) ? 0 : carrinho.hashCode());
+		result = prime * result + ((codigoCarrinho == null) ? 0 : codigoCarrinho.hashCode());
 		result = prime * result + ((codigoItem == null) ? 0 : codigoItem.hashCode());
-		result = prime * result + ((produto == null) ? 0 : produto.hashCode());
-		long temp;
-		temp = Double.doubleToLongBits(quantidade);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((codigoProduto == null) ? 0 : codigoProduto.hashCode());
+		result = prime * result + ((quantidade == null) ? 0 : quantidade.hashCode());
 		return result;
 	}
 
@@ -97,24 +80,33 @@ public class ItemCarrinho implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		ItemCarrinho other = (ItemCarrinho) obj;
-		if (carrinho == null) {
-			if (other.carrinho != null)
+		if (codigoCarrinho == null) {
+			if (other.codigoCarrinho != null)
 				return false;
-		} else if (!carrinho.equals(other.carrinho))
+		} else if (!codigoCarrinho.equals(other.codigoCarrinho))
 			return false;
 		if (codigoItem == null) {
 			if (other.codigoItem != null)
 				return false;
 		} else if (!codigoItem.equals(other.codigoItem))
 			return false;
-		if (produto == null) {
-			if (other.produto != null)
+		if (codigoProduto == null) {
+			if (other.codigoProduto != null)
 				return false;
-		} else if (!produto.equals(other.produto))
+		} else if (!codigoProduto.equals(other.codigoProduto))
 			return false;
-		if (Double.doubleToLongBits(quantidade) != Double.doubleToLongBits(other.quantidade))
+		if (quantidade == null) {
+			if (other.quantidade != null)
+				return false;
+		} else if (!quantidade.equals(other.quantidade))
 			return false;
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "ItemCarrinho [codigoItem=" + codigoItem + ", codigoCarrinho=" + codigoCarrinho + ", codigoProduto="
+				+ codigoProduto + ", quantidade=" + quantidade + "]";
 	}
 	
 }
