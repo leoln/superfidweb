@@ -7,9 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.bhl.superfid.model.Carrinho;
 import br.com.bhl.superfid.model.ItemCarrinho;
-import br.com.bhl.superfid.model.Produto;
 import br.com.bhl.superfid.repository.ItemCarrinhoRepository;
 
 @Service("itemCarrinhoService")
@@ -49,24 +47,6 @@ public class ItemCarrinhoService implements IItemCarrinhoService{
 	public ItemCarrinho getItemCarrinhoById(long id) {
 		// TODO Auto-generated method stub
 		ItemCarrinho itemCarrinho = itemCarrinhoRepository.findOne(id);
-		
-		logService.info("Item Carrinho resgatado! Item Carrinho em detalhe: " + itemCarrinho);
-		return itemCarrinho;
-	}
-
-	@Override
-	public ItemCarrinho getItemCarrinhoByProduto(Produto produto) {
-		// TODO Auto-generated method stub
-		ItemCarrinho itemCarrinho = itemCarrinhoRepository.findByProduto(produto);
-		
-		logService.info("Item Carrinho resgatado! Item Carrinho em detalhe: " + itemCarrinho);
-		return itemCarrinho;
-	}
-
-	@Override
-	public ItemCarrinho getItemCarrinhoByCarrinho(Carrinho carrinho) {
-		// TODO Auto-generated method stub
-		ItemCarrinho itemCarrinho = itemCarrinhoRepository.findByCarrinho(carrinho);
 		
 		logService.info("Item Carrinho resgatado! Item Carrinho em detalhe: " + itemCarrinho);
 		return itemCarrinho;
