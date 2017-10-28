@@ -214,12 +214,12 @@
                                             <tbody>
                                             	<c:forEach items="${produto}" var="prod">
 	                                                <tr>
-	                                                    <td class='light-primary-color'>prod.descricao</td>
-	                                                    <td class='light-primary-color'>prod.precoUnitario</td>
-	                                                    <td class='light-primary-color'>prod.marca</td>
-	                                                    <td class='light-primary-color'>prod.dataValidade</td>
-	                                                    <td class='light-primary-color'>prod.codigoLote</td>
-	                                                    <td class='light-primary-color'>prod.unidade</td>
+	                                                    <td class='light-primary-color'>${prod.descricao}</td>
+	                                                    <td class='light-primary-color'>${prod.precoUnitario}</td>
+	                                                    <td class='light-primary-color'>${prod.marca}</td>
+	                                                    <td class='light-primary-color'>${prod.dataValidade}</td>
+	                                                    <td class='light-primary-color'>${prod.codigoLote}</td>
+	                                                    <td class='light-primary-color'>${prod.unidade}</td>
 	                                                    <td class="light-primary-color text-center">
 	                                                        <div class="btn-group" role="group" aria-label="...">
 	                                                            <button type="button" class="btn btn-secundario" id="alterar">
