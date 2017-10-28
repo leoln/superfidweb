@@ -1,5 +1,6 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@taglib tagdir="/WEB-INF/tags/template" prefix="template"%>
 
 <template:admin>
@@ -215,7 +216,7 @@
                                             	<c:forEach items="${produto}" var="prod">
 	                                                <tr>
 	                                                    <td class='light-primary-color'>${prod.descricao}</td>
-	                                                    <td class='light-primary-color'>${prod.precoUnitario}</td>
+	                                                    <td class='light-primary-color'><fmt:formatNumber value="${prod.precoUnitario}" type="currency" /></td>
 	                                                    <td class='light-primary-color'>${prod.marca}</td>
 	                                                    <td class='light-primary-color'>${prod.dataValidade}</td>
 	                                                    <td class='light-primary-color'>${prod.codigoLote}</td>
