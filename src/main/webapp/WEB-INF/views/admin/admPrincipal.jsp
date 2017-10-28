@@ -383,7 +383,7 @@
 		
 		<script type="text/javascript">
 			function mostrarRelatorio() {
-				$("#btnRelatorio").show();
+				$("#divRelatorio").show();
 			}
 		</script>			
 		
