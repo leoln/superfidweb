@@ -16,15 +16,14 @@ public class AdmPrincipalController {
 	IProdutoService produtoService;
 	
 	@GetMapping
-	public String index( Model model) {
-		model.addAttribute("produto", produtoService.listProduto());
+	public String index() {
 		return "admin/admPrincipal";
 	}
 	
-	/*@RequestMapping("listaProduto")
+	@RequestMapping("/admin")
     public String lista(Model model){
 		model.addAttribute("produto", produtoService.listProduto());
         return"admin/admPrincipal";
-    }*/
+    }
 	
 }
