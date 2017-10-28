@@ -16,14 +16,9 @@ public class AdmPrincipalController {
 	IProdutoService produtoService;
 	
 	@GetMapping
-	public String index() {
+	public String index(Model model) {
+		model.addAttribute("produto", produtoService.listProduto());
 		return "admin/admPrincipal";
 	}
-	
-	@RequestMapping("/admin")
-    public String lista(Model model){
-		model.addAttribute("produto", produtoService.listProduto());
-        return"admin/admPrincipal";
-    }
 	
 }
