@@ -279,7 +279,7 @@
 														
 							<div class="form-group row justify-content-center">
                                 <div class="col-1">
-                                    <button type="button" id="btnRelatorio" class="btn btn-principal">Gerar Relatório </button>
+                                    <button type="button" onclick="javascript:mostrarRelatorio();" id="btnRelatorio" class="btn btn-principal">Gerar Relatório </button>
                                 </div>
 							</div>
 							
