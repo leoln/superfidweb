@@ -276,46 +276,55 @@
                                     </div>
                                 </div>
                             </div>
-                            
-                            <div class="form-group row">
-                                <label class="control-label col-4">Defina os campos para o layout do relatório: &nbsp; &nbsp;</label>
-                                <div class="form-check form-check-inline">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" id="checkbox1" value="option1"> Option 1
-                                    </label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" id="checkbox2" value="option2"> Option 2
-                                    </label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" id="checkbox3" value="option3"> Option 3
-                                    </label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" id="checkbox4" value="option4"> Option 4
-                                    </label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" id="checkbox5" value="option5"> Option 5
-                                    </label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" id="checkbox6" value="option6"> Option 6
-                                    </label>
-                                </div>
-                            </div>
 														
 							<div class="form-group row justify-content-center">
                                 <div class="col-1">
-                                    <button type="button" class="btn btn-principal">Gerar Relatório </button>
+                                    <button type="button" id="btnRelatorio" class="btn btn-principal">Gerar Relatório </button>
                                 </div>
 							</div>
+							
+							<div class="row" id="divRelatorio" style="display: none;">
+                                <div class="col-md-12">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-striped table-hover">
+                                            <thead class="dark-primary-color">
+                                                <tr class="active">
+                                                    <th class="text-center text-white">Nome</th>
+                                                    <th class="text-center text-white">Preço</th>
+                                                    <th class="text-center text-white">Marca</th>
+                                                    <th class="text-center text-white">Validade</th>
+                                                    <th class="text-center text-white">Lote</th>
+                                                    <th class="text-center text-white">Unidade</th>
+                                                    <th class="text-center text-white">Ações</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            	<c:forEach items="${produto}" var="prod">
+	                                                <tr>
+	                                                    <td class='light-primary-color'>${prod.descricao}</td>
+	                                                    <td class='light-primary-color'><fmt:formatNumber value="${prod.precoUnitario}" type="currency" /></td>
+	                                                    <td class='light-primary-color'>${prod.marca}</td>
+	                                                    <td class='light-primary-color'>${prod.dataValidade}</td>
+	                                                    <td class='light-primary-color'>${prod.codigoLote}</td>
+	                                                    <td class='light-primary-color'>${prod.unidade}</td>
+	                                                    <td class="light-primary-color text-center">
+	                                                        <div class="btn-group" role="group" aria-label="...">
+	                                                            <button type="button" class="btn btn-secundario" id="alterar">
+	                                                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+	                                                            </button>
+	                                                            <button type="button" class="btn btn-danger" onclick="removerLinha(this)" id="excluir">
+	                                                                <i class="fa fa-times-circle" aria-hidden="true"></i>
+	                                                            </button>
+	                                                        </div>													
+	                                                    </td>
+	                                                </tr>
+                                                </c:forEach>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                
+                            </div>
                             
                         </div>
                         
@@ -370,7 +379,13 @@
 					</div>
 				</div>
 			</div>
-		</div>				
+		</div>
+		
+		<script type="text/javascript">
+			function mostrarRelatorio() {
+				$("#btnRelatorio").show();
+			}
+		</script>			
 		
 	</jsp:body>
 
