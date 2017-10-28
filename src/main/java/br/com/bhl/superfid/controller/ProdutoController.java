@@ -28,5 +28,5 @@ public class ProdutoController {
 		produtoJson = gson.toJson(produtoService.getProdutoByRfid(rfid));
 		return produtoJson;
 	}
-
+	
 }
