@@ -289,34 +289,19 @@
                                         <table class="table table-bordered table-striped table-hover">
                                             <thead class="dark-primary-color">
                                                 <tr class="active">
-                                                    <th class="text-center text-white">Nome</th>
-                                                    <th class="text-center text-white">Preço</th>
-                                                    <th class="text-center text-white">Marca</th>
-                                                    <th class="text-center text-white">Validade</th>
-                                                    <th class="text-center text-white">Lote</th>
-                                                    <th class="text-center text-white">Unidade</th>
-                                                    <th class="text-center text-white">Ações</th>
+                                                    <th class="text-center text-white">Código</th>
+                                                    <th class="text-center text-white">Data de Início</th>
+                                                    <th class="text-center text-white">Data de Término</th>
+                                                    <th class="text-center text-white">Preço Total</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                            	<c:forEach items="${produto}" var="prod">
+                                            	<c:forEach items="${compra}" var="comp">
 	                                                <tr>
-	                                                    <td class='light-primary-color'>${prod.descricao}</td>
-	                                                    <td class='light-primary-color'><fmt:formatNumber value="${prod.precoUnitario}" type="currency" /></td>
-	                                                    <td class='light-primary-color'>${prod.marca}</td>
-	                                                    <td class='light-primary-color'>${prod.dataValidade}</td>
-	                                                    <td class='light-primary-color'>${prod.codigoLote}</td>
-	                                                    <td class='light-primary-color'>${prod.unidade}</td>
-	                                                    <td class="light-primary-color text-center">
-	                                                        <div class="btn-group" role="group" aria-label="...">
-	                                                            <button type="button" class="btn btn-secundario" id="alterar">
-	                                                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-	                                                            </button>
-	                                                            <button type="button" class="btn btn-danger" onclick="removerLinha(this)" id="excluir">
-	                                                                <i class="fa fa-times-circle" aria-hidden="true"></i>
-	                                                            </button>
-	                                                        </div>													
-	                                                    </td>
+	                                                    <td class='light-primary-color'>${comp.codigo}</td>
+	                                                    <td class='light-primary-color'>${comp.dataInicio}</td>
+	                                                    <td class='light-primary-color'>${comp.dataTermino}</td>
+	                                                    <td class='light-primary-color'><fmt:formatNumber value="${comp.precoTotal}" type="currency" /></td>
 	                                                </tr>
                                                 </c:forEach>
                                             </tbody>
