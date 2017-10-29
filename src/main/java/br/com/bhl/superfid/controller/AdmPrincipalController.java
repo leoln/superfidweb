@@ -22,7 +22,6 @@ public class AdmPrincipalController {
 	@GetMapping
 	public String index(Model model) {
 		model.addAttribute("produto", produtoService.listProduto());
-		model.addAttribute("compra", compraService.listCompra());
 		return "admin/admPrincipal";
 	}
 	
