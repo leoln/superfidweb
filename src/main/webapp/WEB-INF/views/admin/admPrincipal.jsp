@@ -297,12 +297,14 @@
                                             </thead>
                                             <tbody>
                                             	<c:forEach items="${compra}" var="comp">
-	                                                <tr>
-	                                                    <td class='light-primary-color'>${comp.codigo}</td>
-	                                                    <td class='light-primary-color'>${comp.dataInicio}</td>
-	                                                    <td class='light-primary-color'>${comp.dataTermino}</td>
-	                                                    <td class='light-primary-color'><fmt:formatNumber value="${comp.precoTotal}" type="currency" /></td>
-	                                                </tr>
+                                            		<c:if test="${comp.indicadorFinalizado == '1'}">
+		                                                <tr>
+		                                                    <td class='light-primary-color'>${comp.codigo}</td>
+		                                                    <td class='light-primary-color'>${comp.dataInicio}</td>
+		                                                    <td class='light-primary-color'>${comp.dataTermino}</td>
+		                                                    <td class='light-primary-color'><fmt:formatNumber value="${comp.precoTotal}" type="currency" /></td>
+		                                                </tr>
+		                                        	</c:if>
                                                 </c:forEach>
                                             </tbody>
                                         </table>
