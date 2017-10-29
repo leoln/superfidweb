@@ -5,10 +5,12 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import br.com.bhl.superfid.model.Compra;
 import br.com.bhl.superfid.repository.CompraRepository;
 
+@Service("compraService")
 public class CompraService implements ICompraService {
 
 	Logger logService = LoggerFactory.getLogger(CompraService.class);
