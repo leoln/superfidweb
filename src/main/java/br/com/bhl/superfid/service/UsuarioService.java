@@ -53,7 +53,7 @@ public class UsuarioService implements IUsuarioService {
 	}
 
 	@Override
-	public Usuario getUsuarioByCodigoAtenticacao(String codigoAutenticacao) {
+	public Usuario getUsuarioByCodigoAutenticacao(String codigoAutenticacao) {
 		// TODO Auto-generated method stub
 		Usuario usuario = usuarioRepository.findByCodigoAutenticacao(codigoAutenticacao);
 		

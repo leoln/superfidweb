@@ -10,7 +10,7 @@ public interface IUsuarioService {
 	public void updateUsuario(Usuario usuario);
 	public List<Usuario> listUsuario();
 	public Usuario getUsuarioById(long id);
-	public Usuario getUsuarioByCodigoAtenticacao(String codigoAutenticacao);
+	public Usuario getUsuarioByCodigoAutenticacao(String codigoAutenticacao);
 	public void removeUsuario(long id);
 	
 }

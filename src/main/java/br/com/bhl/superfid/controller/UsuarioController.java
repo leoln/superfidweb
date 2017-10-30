@@ -27,7 +27,7 @@ public class UsuarioController {
 	@ResponseBody
 	public String usuarioParseJson(String codigoAutenticacao) {
 		String usuarioJson = "";
-		usuarioJson = gson.toJson( usuarioService.getUsuarioByCodigoAtenticacao( codigoAutenticacao ) );
+		usuarioJson = gson.toJson( usuarioService.getUsuarioByCodigoAutenticacao( codigoAutenticacao ) );
 		return usuarioJson;
 	}
 	
