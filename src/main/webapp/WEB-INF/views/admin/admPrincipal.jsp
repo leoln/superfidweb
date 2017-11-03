@@ -296,8 +296,10 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                            	<c:set var="totalCompra" value=""/>   
                                             	<c:forEach items="${compra}" var="comp">
                                             		<c:if test="${comp.indicadorFinalizado == '1'}">
+                                            			<c:set var="totalCompra" value="${totalCompra + comp.precoTotal}"/>
 		                                                <tr>
 		                                                    <td class='light-primary-color'>${comp.codigo}</td>
 		                                                    <td class='light-primary-color'>${comp.dataInicio}</td>
@@ -318,15 +320,10 @@
                                                     <th class="text-center text-white">Total</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                            	<c:set var="totalCompra" value="0"/>
-                                            	<c:forEach items="${compra}" var="comp">
-                                            		<c:if test="${comp.indicadorFinalizado == '1'}">
-		                                                <tr>
-		                                                    <td class='light-primary-color'><fmt:formatNumber value="${totalCompra} + ${comp.precoTotal}" type="currency" /></td>
-		                                                </tr>
-		                                        	</c:if>
-                                                </c:forEach>
+                                            <tbody>                                			
+                                                <tr>
+                                                    <td class='light-primary-color'><fmt:formatNumber value="${totalCompra}" type="currency" /></td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
