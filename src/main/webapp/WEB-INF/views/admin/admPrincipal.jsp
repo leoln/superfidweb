@@ -312,12 +312,14 @@
                                         </table>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                            </div>
+                            <div class="row justify-content-end">
+                            	<div class="col-md-4">
                                 	<div class="table-responsive">
                                         <table class="table table-bordered table-striped table-hover">
                                             <thead class="dark-primary-color">
                                                 <tr class="active">
-                                                    <th class="text-center text-white">Total</th>
+                                                    <th class="text-center text-white">Total de Vendas</th>
                                                 </tr>
                                             </thead>
                                             <tbody>                                			
