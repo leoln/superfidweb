@@ -313,7 +313,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row divRelatorio justify-content-end">
+                            <div class="row divRelatorio justify-content-end" style="display: none;">
                             	<div class="col-md-3">
                                 	<div class="table-responsive">
                                         <table class="table table-bordered table-striped table-hover">
