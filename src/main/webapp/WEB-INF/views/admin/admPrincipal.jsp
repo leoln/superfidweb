@@ -310,7 +310,27 @@
                                         </table>
                                     </div>
                                 </div>
-                                
+                                <div class="col-md-4">
+                                	<div class="table-responsive">
+                                        <table class="table table-bordered table-striped table-hover">
+                                            <thead class="dark-primary-color">
+                                                <tr class="active">
+                                                    <th class="text-center text-white">Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            	<c:set var="totalCompra" value="0"/>
+                                            	<c:forEach items="${compra}" var="comp">
+                                            		<c:if test="${comp.indicadorFinalizado == '1'}">
+		                                                <tr>
+		                                                    <td class='light-primary-color'><fmt:formatNumber value="${totalCompra} + ${comp.precoTotal}" type="currency" /></td>
+		                                                </tr>
+		                                        	</c:if>
+                                                </c:forEach>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                             
                         </div>
