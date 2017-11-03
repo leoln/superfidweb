@@ -283,7 +283,7 @@
                                 </div>
 							</div>
 							
-							<div class="row" id="divRelatorio" style="display: none;">
+							<div class="row divRelatorio" style="display: none;">
                                 <div class="col-md-12">
                                     <div class="table-responsive">
                                         <table class="table table-bordered table-striped table-hover">
@@ -313,8 +313,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row justify-content-end">
-                            	<div class="col-md-4">
+                            <div class="row divRelatorio justify-content-end">
+                            	<div class="col-md-3">
                                 	<div class="table-responsive">
                                         <table class="table table-bordered table-striped table-hover">
                                             <thead class="dark-primary-color">
@@ -389,7 +389,7 @@
 		
 		<script type="text/javascript">
 			function mostrarRelatorio() {
-				$("#divRelatorio").show();
+				$(".divRelatorio").show();
 			}
 		</script>			
 		
