@@ -3,7 +3,11 @@ package br.com.bhl.superfid.model;
 import java.io.Serializable;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
+@Entity(name = "Tb_Pagamento")
+@Table(name = "tb_pagamento")
 public class Pagamento implements Serializable {
 
 	private static final long serialVersionUID = 1L;
