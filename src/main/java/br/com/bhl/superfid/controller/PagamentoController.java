@@ -33,7 +33,7 @@ public class PagamentoController {
 		String indicadorPagamento = "";
 		Pagamento pagamentoRecebido = gson.fromJson(json, Pagamento.class);
 		
-		logService.info(json);
+		logService.info("PAGAMENTO EM JSON: " + json);
 		
 		Pagamento pagamentoVerificado = pagamentoService.getProdutoByCodigoUsuario(pagamentoRecebido.getCodigoUsuario());
 		
