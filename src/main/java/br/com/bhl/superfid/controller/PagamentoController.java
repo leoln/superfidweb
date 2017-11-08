@@ -1,5 +1,7 @@
 package br.com.bhl.superfid.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -16,6 +18,8 @@ import br.com.bhl.superfid.service.IPagamentoService;
 @RequestMapping("/pagamento")
 public class PagamentoController {
 	
+	Logger logService = LoggerFactory.getLogger(PagamentoController.class);
+	
 	@Autowired
 	IPagamentoService pagamentoService;
 
@@ -29,6 +33,8 @@ public class PagamentoController {
 		String indicadorPagamento = "";
 		Pagamento pagamentoRecebido = gson.fromJson(json, Pagamento.class);
 		
+		logService.info(json);
+		
 		Pagamento pagamentoVerificado = pagamentoService.getProdutoByCodigoUsuario(pagamentoRecebido.getCodigoUsuario());
 		
 		if ( pagamentoRecebido.getCompra().getPrecoTotal() <= Double.parseDouble( pagamentoVerificado.getLimiteCartao() ) ) {
@@ -41,7 +47,7 @@ public class PagamentoController {
 			indicadorPagamento = "fracasso";
 		}
 		
-		return indicadorPagamento;
+		return indicadorPagamento;	
 	}
 
 }
