@@ -36,7 +36,7 @@ public class PagamentoController {
 		logService.info("PAGAMENTO EM JSON: " + json);
 		logService.info("PAGAMENTO OBJETO: " + pagamentoRecebido);
 		
-		Pagamento pagamentoVerificado = pagamentoService.getProdutoByCodigoUsuario(pagamentoRecebido.getCodigoUsuario());
+		Pagamento pagamentoVerificado = pagamentoService.getProdutoByCodigoUsuario("" + pagamentoRecebido.getCompra().getCodigoUsuario());
 		
 		if ( pagamentoRecebido.getCompra().getPrecoTotal() <= Double.parseDouble( pagamentoVerificado.getLimiteCartao() ) ) {
 			isCompraOk = true;
