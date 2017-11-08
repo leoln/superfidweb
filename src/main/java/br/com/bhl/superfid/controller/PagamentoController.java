@@ -34,6 +34,7 @@ public class PagamentoController {
 		Pagamento pagamentoRecebido = gson.fromJson(json, Pagamento.class);
 		
 		logService.info("PAGAMENTO EM JSON: " + json);
+		logService.info("PAGAMENTO OBJETO: " + pagamentoRecebido);
 		
 		Pagamento pagamentoVerificado = pagamentoService.getProdutoByCodigoUsuario(pagamentoRecebido.getCodigoUsuario());
 		
