@@ -26,7 +26,7 @@ public class PagamentoController {
 	@Autowired
 	Gson gson;
 
-	@RequestMapping(value = "/isPagamentoSuccess", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/isPagamentoSuccess", method = RequestMethod.GET, produces = MediaType.TEXT_PLAIN_VALUE)
 	@ResponseBody
 	public String produtoParseJson(String json) {
 		boolean isCompraOk = false;
